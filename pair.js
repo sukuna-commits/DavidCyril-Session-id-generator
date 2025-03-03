@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_Gifted_Tech = Gifted_Tech({
+            let Pair_Code_By_Sukuna = Gifted_Tech({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -35,16 +35,16 @@ router.get('/', async (req, res) => {
                 logger: pino({level: "fatal"}).child({level: "fatal"}),
                 browser: ["Chrome (Linux)", "", ""]
              });
-             if(!Pair_Code_By_Gifted_Tech.authState.creds.registered) {
+             if(!Pair_Code_By_Sukuna.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_Gifted_Tech.requestPairingCode(num)
+                            const code = await Pair_Code_By_Sukuna.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Code_By_Gifted_Tech.ev.on('creds.update', saveCreds)
-            Pair_Code_By_Gifted_Tech.ev.on("connection.update", async (s) => {
+            Pair_Code_By_Sukuna.ev.on('creds.update', saveCreds)
+            Pair_Code_By_Sukuna.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -61,7 +61,7 @@ router.get('/', async (req, res) => {
 *_Made With 🚬🗿_*
 ______________________________________
 ╔════◇
-║ *『 AMAZING YOU'VE CHOSEN ZENITSU CRASH V2 』*
+║ *『 AMAZING YOU'VE CHOSEN Sukuna V1 』*
 ║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
 ╚════════════════════════╝
 ╔═════◇
